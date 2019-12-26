@@ -1,5 +1,5 @@
 {
-  "name": "tiny-message",
+  "name": "tiny-message-box",
   "version": "1.0.0",
   "description": "",
   "main": "dist/tinymessage.js",
