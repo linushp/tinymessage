@@ -12,6 +12,7 @@ let buildObj = {
   mode: isProduction() ? 'production' : 'development',
   entry: {
     'tinymessage': path.join(__dirname, "./src/tinymessage.js"),
+    'testframe': path.join(__dirname, "./src/testframe.js"),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
