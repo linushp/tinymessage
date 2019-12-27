@@ -76,7 +76,7 @@ class MessageManager {
         this.managerId = Date.now() + Math.ceil(Math.random() * 577362557025);
         this.indexId = Date.now() + Math.ceil(Math.random() * 577362557025);
         this.messageList = [];
-        this.useFrameProxy = false;
+        this.useFrameProxy = {isSend: false, isListen: false};
         this.initWindowListener();
     }
 
@@ -107,7 +107,7 @@ class MessageManager {
         }
 
         window.addEventListener('message', (e) => {
-            if (this.useFrameProxy) {
+            if (this.useFrameProxy.isListen) {
                 let {from, type, content, duration, managerId} = e.data || {};
                 if (from === 'TinyMessageBox') {
                     //不处理自己发出去的事件
@@ -127,7 +127,7 @@ class MessageManager {
         }
 
 
-        if (this.useFrameProxy && this.isIframe()) {
+        if (this.useFrameProxy.isSend && this.isIframe()) {
             window.parent.postMessage({
                 managerId: this.managerId,
                 from: 'TinyMessageBox',
@@ -191,8 +191,8 @@ class MessageManager {
 const messageManager = new MessageManager();
 
 module.exports = {
-    setUseFrameProxy(useFrameProxy){
-        return messageManager.useFrameProxy = useFrameProxy;
+    setUseFrameProxy(isSend, isListen) {
+        return messageManager.useFrameProxy = {isSend, isListen};
     },
     info(content, duration) {
         return messageManager.showMessage('info', content, duration);
