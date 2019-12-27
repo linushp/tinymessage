@@ -98,7 +98,7 @@ class MessageManager {
     }
 
 
-    showMessage(type = 'info', content = 'hello', duration = 2000) {
+    showMessage(type = 'info', content = 'hello', duration = 3000) {
 
         if (typeof window === 'undefined' || typeof document === 'undefined') {
             return;
