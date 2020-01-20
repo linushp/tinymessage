@@ -27,6 +27,14 @@ function createElement(type, text) {
 }
 
 
+function removeElement(element){
+    if (element.remove){
+        element.remove();
+    }else if (element.removeNode){
+        element.removeNode(true);
+    }
+}
+
 class Message {
     constructor(indexId, type, content, duration, order, managerElement) {
         this.id = "tiny-message-" + indexId;
@@ -61,12 +69,14 @@ class Message {
         this.element.style.height = "0";
         return new Promise((resolve) => {
             setTimeout(() => {
-                this.element.remove();
+                removeElement(this.element);
                 this.element = null;
                 resolve();
             }, 100);
         });
     }
+
+
 }
 
 
@@ -93,7 +103,7 @@ class MessageManager {
     removeManagerElement() {
         let element = document.getElementById('tiny-message-manager');
         if (element) {
-            element.remove();
+            removeElement(element);
         }
     }
 
