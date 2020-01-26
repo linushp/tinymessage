@@ -27,8 +27,9 @@ function createToastHtml(type, msg) {
 </div>`;
 }
 
+let timeHandler = null;
 
-function showToast(type, msg) {
+function showToast(type, msg, duration) {
     let root = getToastElement();
     if (type === 'toast') {
         root.className = 'tiny-message-toast11-animation tiny-message-toast11-' + type;
@@ -39,6 +40,18 @@ function showToast(type, msg) {
         root.className = 'tiny-message-toast11-' + type;
     }
     root.innerHTML = createToastHtml(type, msg);
+    root.style.display = 'block';
+
+    if (timeHandler) {
+        clearTimeout(timeHandler);
+        timeHandler = null;
+    }
+
+    timeHandler = setTimeout(function () {
+        let root = getToastElement();
+        root.style.display = 'none';
+        timeHandler = null;
+    }, duration);
 }
 
 module.exports = {
