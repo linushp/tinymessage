@@ -228,13 +228,13 @@ module.exports = {
         return messageManager.destroy();
     },
     toastSuccess(content, duration){
-       return showToast('toastSuccess',content, duration);
+       return showToast('toastSuccess',content, duration,null);
     },
     toastLoading(content, duration){
-        return showToast('toastLoading',content, duration);
+        return showToast('toastLoading',content, duration,null);
     },
-    toast(content, duration){
-        return showToast('toast',content, duration);
+    toast(content, duration, animationClass){
+        return showToast('toast',content, duration,animationClass);
     },
 
 };

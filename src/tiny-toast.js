@@ -29,10 +29,11 @@ function createToastHtml(type, msg) {
 
 let timeHandler = null;
 
-function showToast(type, msg, duration) {
+function showToast(type, msg, duration, animationClass) {
     let root = getToastElement();
     if (type === 'toast') {
-        root.className = 'tiny-message-toast11-animation tiny-message-toast11-' + type;
+        animationClass = animationClass || 'tiny-message-toast11-animation';
+        root.className = animationClass + '  tiny-message-toast11-' + type;
         setTimeout(function () {
             root.className = 'tiny-message-toast11-' + type;
         }, 300);
