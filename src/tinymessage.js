@@ -29,11 +29,13 @@ function createElement(type, text) {
 }
 
 
-function removeElement(element){
-    if (element.remove){
-        element.remove();
-    }else if (element.removeNode){
-        element.removeNode(true);
+function removeElement(element) {
+    if (element) {
+        if (element.remove) {
+            element.remove();
+        } else if (element.removeNode) {
+            element.removeNode(true);
+        }
     }
 }
 
@@ -227,14 +229,14 @@ module.exports = {
     destroy() {
         return messageManager.destroy();
     },
-    toastSuccess(content, duration){
-       return showToast('toastSuccess',content, duration,null);
+    toastSuccess(content, duration) {
+        return showToast('toastSuccess', content, duration, null);
     },
-    toastLoading(content, duration){
-        return showToast('toastLoading',content, duration,null);
+    toastLoading(content, duration) {
+        return showToast('toastLoading', content, duration, null);
     },
-    toast(content, duration, animationClass){
-        return showToast('toast',content, duration,animationClass);
+    toast(content, duration, animationClass) {
+        return showToast('toast', content, duration, animationClass);
     },
 
 };
