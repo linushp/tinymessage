@@ -1,6 +1,6 @@
 {
   "name": "tiny-message-box",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "dist/tinymessage.js",
   "scripts": {

@@ -66,7 +66,7 @@ let buildObj = {
     contentBase: './',
     open: false,
     host: '127.0.0.1',
-    port: 80,
+    port: 8120,
     https: false,
     hotOnly: false,
     disableHostCheck: true,
