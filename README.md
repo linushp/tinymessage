@@ -7,17 +7,32 @@
 ## 用法
 
 
+1. 安装
 ```
 
 npm i tiny-message-box
 
-
 ```
 
+2. 引入
 ```javascript
 import TinyMessage from 'tiny-message-box';
 
-TinyMessage.success('成功提示')
+```
+
+3. 调用
+```javascript
+
+
+TinyMessage.success('成功提示', 3000) // 停留3000毫秒
+
+TinyMessage.error('错误提示', 3000) // 停留3000毫秒
+
+TinyMessage.info('普通信息提示', 3000) // 停留3000毫秒
+
+TinyMessage.loading('加载中', 3000) // 停留3000毫秒
+
+TinyMessage.destroy() // 立即销毁所有弹出的信息提示框
 
 ```
 
