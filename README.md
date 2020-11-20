@@ -16,7 +16,7 @@ npm i tiny-message-box
 
 2. 引入
 ```javascript
-import TinyMessage from 'tiny-message-box';
+import * as TinyMessage from 'tiny-message-box';
 
 ```
 
