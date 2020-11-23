@@ -19,7 +19,7 @@ function getToastElement() {
 
 
 function createToastHtml(type, msg) {
-    let iconType = iconTypeMap[type] || "";
+    var iconType = iconTypeMap[type] || "";
     return `
 <div class="tiny-message-toast-content  tiny-message-toast-content-${type}">
     <div class="tiny-message-toast-icon">${iconType}</div>
@@ -30,7 +30,8 @@ function createToastHtml(type, msg) {
 let timeHandler = null;
 
 function showToast(type, msg, duration, animationClass) {
-    let root = getToastElement();
+    duration = duration || 3000;
+    var root = getToastElement();
     if (type === 'toast') {
         animationClass = animationClass || 'tiny-message-toast11-animation';
         root.className = animationClass + '  tiny-message-toast11-' + type;
