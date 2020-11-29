@@ -1,4 +1,4 @@
-let {showToast} = require('./tiny-toast');
+let {showToast,hideToast} = require('./tiny-toast');
 let {showModalBox,hideModalBox} = require('./modal-box');
 require('./tinymessage.less');
 
@@ -237,7 +237,8 @@ module.exports = {
         return messageManager.showMessage('loading', content, duration);
     },
     destroy() {
-        return messageManager.destroy();
+        hideToast();
+        messageManager.destroy();
     },
     toastSuccess(content, duration) {
         return showToast('toastSuccess', content, duration, null);

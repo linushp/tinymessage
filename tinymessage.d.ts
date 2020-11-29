@@ -1,6 +1,6 @@
 export interface MessageObject {
     show: () => void;
-    updateContent: () => void;
+    updateContent: (content:string) => void;
     destroy: () => void;
 }
 

@@ -56,6 +56,15 @@ function showToast(type, msg, duration, animationClass) {
     }, duration);
 }
 
+
+function hideToast(){
+    let root = getToastElement();
+    root.style.display = 'none';
+    timeHandler = null;
+}
+
+
 module.exports = {
-    showToast
+    showToast,
+    hideToast
 };
