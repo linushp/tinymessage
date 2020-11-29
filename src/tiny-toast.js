@@ -60,7 +60,10 @@ function showToast(type, msg, duration, animationClass) {
 function hideToast(){
     let root = getToastElement();
     root.style.display = 'none';
-    timeHandler = null;
+    if (timeHandler) {
+        clearTimeout(timeHandler);
+        timeHandler = null;
+    }
 }
 
 
