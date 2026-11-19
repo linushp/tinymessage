@@ -1,45 +1,42 @@
 {
   "name": "tiny-message-box",
   "version": "1.1.7",
-  "description": "",
-  "main": "dist/tinymessage.js",
+  "description": "Lightweight Ant Design–style global message, toast, and modal library",
+  "type": "module",
+  "main": "./dist/tinymessage.js",
+  "module": "./dist/tinymessage.esm.js",
   "types": "./tinymessage.d.ts",
   "typings": "./tinymessage.d.ts",
+  "exports": {
+    ".": {
+      "types": "./tinymessage.d.ts",
+      "import": "./dist/tinymessage.esm.js",
+      "require": "./dist/tinymessage.js"
+    }
+  },
+  "files": [
+    "dist",
+    "tinymessage.d.ts"
+  ],
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "rm -rf dist/ && NODE_ENV=production webpack"
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/linushp/tinymessage.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/linushp/tinymessage/issues"
   },
   "homepage": "https://github.com/linushp/tinymessage#readme",
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "babel-plugin-transform-async-to-promises": "^0.8.15",
-    "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^3.1.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "string2-loader": "0.0.6",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2",
-    "classnames": "^2.2.6",
-    "less": "^3.10.3",
-    "less-loader": "^5.0.0",
-    "loadjs": "^4.2.0",
-    "qs": "^6.9.1"
-  },
-  "peerDependencies": {}
+    "less": "^4.9.1",
+    "vite": "^8.3.8",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
+  }
 }

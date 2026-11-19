@@ -20,12 +20,6 @@ Zero runtime dependencies. Works with plain JavaScript, and does not require Rea
 npm i tiny-message-box
 ```
 
-Or with yarn:
-
-```bash
-yarn add tiny-message-box
-```
-
 ## Quick start
 
 ```javascript
@@ -183,14 +177,21 @@ TinyMessage.setUseFrameProxy(true, false);
 
 ```bash
 # install dependencies
-yarn
+npm install
 
-# local demo (webpack-dev-server)
-yarn start
+# local demo
+npm start
 
 # production build → dist/
-yarn build
+npm run build
 ```
+
+Build output:
+
+- `dist/tinymessage.js` — UMD bundle (global `TinyMessage`)
+- `dist/tinymessage.esm.js` — ES module bundle
+
+Styles are injected by the JS bundle; no separate CSS import is required.
 
 ## License
 

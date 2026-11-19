@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tiny-message-box demo</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      padding: 24px;
+      line-height: 1.5;
+    }
+    button {
+      margin: 0 8px 8px 0;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>tiny-message-box</h1>
+  <p>Click a button to try the API.</p>
+  <div>
+    <button type="button" id="btn-success">success</button>
+    <button type="button" id="btn-error">error</button>
+    <button type="button" id="btn-info">info</button>
+    <button type="button" id="btn-warning">warning</button>
+    <button type="button" id="btn-loading">loading</button>
+    <button type="button" id="btn-toast">toastSuccess</button>
+    <button type="button" id="btn-modal">showModalBox</button>
+    <button type="button" id="btn-destroy">destroy</button>
+  </div>
+  <script type="module" src="/demo.js"></script>
+</body>
+</html>
