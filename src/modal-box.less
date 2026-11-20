@@ -49,28 +49,50 @@
     height: 34px;
 }
 
-.tiny-message-modal-btn-cancel, .tiny-message-modal-btn-ok{
+#tiny-message-modal-box .tiny-message-modal-btn-cancel,
+#tiny-message-modal-box .tiny-message-modal-btn-ok{
+    appearance: none;
     color: #fff;
     background-color: #1890ff;
-    border-color: #1890ff;
+    border: 1px solid #1890ff;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
     -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
     width: 74px;
     height: 32px;
-    line-height: 32px;
+    margin: 0 0 0 10px;
+    padding: 0;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
     display: block;
     outline: none;
-    border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 10px;
     box-sizing: border-box;
     float: right;
 }
 
-.tiny-message-modal-btn-cancel{
+#tiny-message-modal-box .tiny-message-modal-btn-ok:hover,
+#tiny-message-modal-box .tiny-message-modal-btn-ok:focus{
+    color: #fff;
+    background-color: #1890ff;
+    border-color: #1890ff;
+}
+
+#tiny-message-modal-box .tiny-message-modal-btn-cancel{
     color: rgba(0,0,0,.65);
     background: #fff;
     border: 1px solid #d9d9d9;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+#tiny-message-modal-box .tiny-message-modal-btn-cancel:hover,
+#tiny-message-modal-box .tiny-message-modal-btn-cancel:focus{
+    color: rgba(0,0,0,.65);
+    background: #fff;
+    border-color: #d9d9d9;
 }
